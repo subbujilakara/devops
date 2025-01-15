@@ -1,5 +1,6 @@
 FROM nginx:1.19-alpine
-ENV DEBIAN_FRONTEND=noninteractive
+ENV NGINX_HOST=localhost \
+    NGINX_PORT=80
 RUN addgroup -S nginx && adduser -S nginx -G nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 RUN chown -R nginx:nginx /etc/nginx
